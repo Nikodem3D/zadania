@@ -1,0 +1,25 @@
+<html>
+    <canvas width="400" height="400" id="can"></canvas>
+    <script>
+      var c = can.getContext("2d");
+    
+    var x = 100;
+    var y = 100;
+    var kat = 45;
+    // przeliczenie stopni na radiany
+    var k = kat * Math.PI / 180;
+    // układ zapamiętany kąt 0 kolor czarny
+    c.save();
+    c.fillStyle = "red";
+    c.translate(x, y);
+    c.rotate(k);
+    // czerwony kwadrat
+    c.fillRect(-50, -50, 100, 100);
+    
+    // odtworzenie stanu canvas
+    c.restore();
+    c.translate(x+50, y);
+    // czarny kwadrat – bez obrotu
+    c.fillRect(-50, -50, 100, 100);
+    
+    </script>
